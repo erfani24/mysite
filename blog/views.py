@@ -5,12 +5,12 @@ from datetime import datetime
 
 def blog_view(request):
     today = datetime.now()
-    posts = Post.objects.filter(published_date__lte = today) 
+    posts = Post.objects.filter(published_date__lte = today,status = 1) 
     context = {'posts': posts}
     return render(request, 'blog/blog-home.html',context)
 
 def blog_single (request,pid):
-    post = get_object_or_404(Post,id = pid)
+    post = get_object_or_404(Post,id = pid, status = 1)
     post.counted_views += 1
     post.save()
     context = {"post" : post}
