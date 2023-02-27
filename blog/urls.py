@@ -7,5 +7,7 @@ app_name = "blog"
 urlpatterns = [
     path('',blog_view, name="index"),
     path('<int:pid>/',blog_single,name='single'),
-    path('post-<int:pid>/',test)
+    path('post-<int:pid>/',test),
+    path('category/<str:cat_name>/',blog_view,name='category'),
+     path('writer/<str:writer_name>/',blog_view,name='writer')
 ]

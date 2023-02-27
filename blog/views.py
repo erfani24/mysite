@@ -3,9 +3,13 @@ from blog.models import Post
 from datetime import datetime
 # Create your views here.
 
-def blog_view(request):
+def blog_view(request,cat_name=None, writer_name=None):
     today = datetime.now()
     posts = Post.objects.filter(published_date__lte = today,status = 1) 
+    if cat_name:
+        posts = posts.filter(category__name=cat_name)
+    if writer_name:
+        posts = posts.filter(author__username=writer_name)
     context = {'posts': posts}
     return render(request, 'blog/blog-home.html',context)
 
@@ -42,3 +46,10 @@ def test(request,pid):
     post = Post.objects.get(id=pid)
     context = {'post': post}
     return render(request,'blog/test.html', context)
+
+def blog_category(request,cat_name):
+    today = datetime.now()
+    posts = Post.objects.filter(published_date__lte = today,status = 1)
+    posts = posts.filter(category__name=cat_name)
+    context = {'posts': posts}
+    return render(request,'blog/blog-home.html', context)
