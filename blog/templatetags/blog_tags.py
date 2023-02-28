@@ -1,18 +1,18 @@
 from django import template
 from blog.models import Post,Category
-from datetime import datetime
+from django.utils import timezone
 
 register = template.Library()
 
 @register.inclusion_tag('blog/blog-latest-posts.html')
 def latestposts():
-    today = datetime.now()
+    today = timezone.now()
     posts = Post.objects.filter(published_date__lte = today,status=1).order_by('-published_date')[:5]
     return {'posts': posts}
 
 @register.inclusion_tag('blog/blog-category.html')
 def postcategories():
-    today = datetime.now()
+    today = timezone.now()
     posts = Post.objects.filter(published_date__lte = today,status=1)
     cats = Category.objects.all()
     cat_names = {}

@@ -1,15 +1,27 @@
 from django.shortcuts import render, get_object_or_404
 from blog.models import Post
-from datetime import datetime
+from django.utils import timezone
+
+from django.core.paginator import Paginator, PageNotAnInteger,EmptyPage
 # Create your views here.
 
 def blog_view(request,cat_name=None, writer_name=None):
-    today = datetime.now()
+    today = timezone.now()
     posts = Post.objects.filter(published_date__lte = today,status = 1) 
     if cat_name:
         posts = posts.filter(category__name=cat_name)
     if writer_name:
         posts = posts.filter(author__username=writer_name)
+        
+    posts = Paginator(posts, 3)
+    page = request.GET.get('page')
+    try:
+        posts = posts.page(page)
+    except PageNotAnInteger:
+        posts = posts.page(1)
+    except EmptyPage:
+        posts = posts.page(1)
+    
     context = {'posts': posts}
     return render(request, 'blog/blog-home.html',context)
 
@@ -19,7 +31,7 @@ def blog_single (request,pid):
     post.save()
     
     # finding next and previous posts
-    today = datetime.now()
+    today = timezone.now()
     posts = Post.objects.filter(published_date__lte = today,status = 1)
     post_list = []
     for index, obj in enumerate(posts):
@@ -48,8 +60,17 @@ def test(request,pid):
     return render(request,'blog/test.html', context)
 
 def blog_category(request,cat_name):
-    today = datetime.now()
+    today = timezone.now()
     posts = Post.objects.filter(published_date__lte = today,status = 1)
     posts = posts.filter(category__name=cat_name)
     context = {'posts': posts}
     return render(request,'blog/blog-home.html', context)
+
+def blog_search(request):
+    today = timezone.now()
+    posts = Post.objects.filter(published_date__lte = today,status = 1) 
+    if request.method == 'GET':
+        if s:= request.GET.get('search'):
+            posts = posts.filter(content__contains = s)
+    context = {'posts': posts}
+    return render(request, 'blog/blog-home.html',context)
