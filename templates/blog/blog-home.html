@@ -2,6 +2,7 @@
 {% load static %}
 {% load blog_tags %}
 {% block content %}
+{% load humanize %}
 
 <!-- start banner Area -->
 <section class="banner-area relative blog-home-banner" id="home">
@@ -106,7 +107,7 @@
 									href="{% url 'blog:writer' writer_name=post.author %}">{{post.author.get_full_name}}</a>
 								<span class="lnr lnr-user"></span>
 							</p>
-							<p class="date col-lg-12 col-md-12 col-6"><a href="#">{{post.published_date|date:"d M Y"}}
+							<p class="date col-lg-12 col-md-12 col-6"><a href="#">{{post.published_date|naturaltime}}
 
 								</a> <span class="lnr lnr-calendar-full"></span></p>
 							<p class="view col-lg-12 col-md-12 col-6"><a href="#">{{post.counted_views}} Views</a> <span

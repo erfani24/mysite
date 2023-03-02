@@ -1,5 +1,5 @@
 {% load static %}
-
+{% load humanize %}
 
 <section class="recent-blog-area section-gap">
     <div class="container">
@@ -37,7 +37,7 @@
                         <p>
                             {{post.content|truncatewords_html:20}}
                         </p>
-                        <h6 class="date">{{post.published_date|date:'d M Y'}}</h6>
+                        <h6 class="date">{{post.published_date|naturaltime}}</h6>
                     </div>
                 </div>
                 {% endfor %}
