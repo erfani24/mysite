@@ -14,9 +14,9 @@ def contact_view(request):
          form = ContactForm(request.POST)
          if form.is_valid():
              form.save()
-             messages.add_message(request, messages.SUCCESS, 'Your message has been sent.')
+             messages.success(request, "Message sent." )
          else:
-             messages.add_message(request, messages.ERROR, 'Your message has been not sent.')
+             messages.error(request, "Error. Message not sent.")
     else:
         form = ContactForm()
        
@@ -41,7 +41,10 @@ def newsletter_view(request):
          form = NewsletterForm(request.POST)
          if form.is_valid():
              form.save()
+             messages.success(request, "Done." )
              return HttpResponseRedirect('/')
+         else:
+             messages.error(request, "Error. Email not valid.")
              
     else:
         form = NewsletterForm()

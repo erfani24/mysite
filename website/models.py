@@ -10,6 +10,9 @@ class Contact(models.Model):
     created_date = models.DateTimeField(auto_now_add=True)
     updated_time = models.DateTimeField(auto_now=True)
     
+    def __str__(self):
+        return self.subject
+    
     class Meta:
         ordering = ['created_date']
         
