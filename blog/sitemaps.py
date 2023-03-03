@@ -9,4 +9,4 @@ class BlogSitemap(Sitemap):
         return Post.objects.filter(status=1)
 
     def lastmod(self, obj):
-        return obj.pub_date
+        return obj.published_date

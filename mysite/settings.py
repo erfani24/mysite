@@ -39,9 +39,16 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
+# Summernote settings
+
+SUMMERNOTE_THEME = 'bs5'
+
+
+
 # Application definition
 
 INSTALLED_APPS = [
+    'multi_captcha_admin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -51,6 +58,12 @@ INSTALLED_APPS = [
     'django.contrib.humanize',
     'django_extensions',
     'django.contrib.sites',
+    'django.contrib.sitemaps',
+    'django_summernote',
+    'captcha',
+    "debug_toolbar",
+    "taggit",
+    'robots',
     'website',
     'blog'
 ]
@@ -65,9 +78,16 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
 ]
 
 ROOT_URLCONF = 'mysite.urls'
+
+# admin login settings
+
+MULTI_CAPTCHA_ADMIN = {
+    'engine': 'simple-captcha',
+}
 
 TEMPLATES = [
     {
@@ -148,3 +168,9 @@ MEDIA_ROOT = BASE_DIR / 'media'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+INTERNAL_IPS = [
+
+    "127.0.0.1",
+
+]

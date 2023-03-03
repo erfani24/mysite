@@ -5,13 +5,15 @@ from django.utils import timezone
 from django.core.paginator import Paginator, PageNotAnInteger,EmptyPage
 # Create your views here.
 
-def blog_view(request,cat_name=None, writer_name=None):
+def blog_view(request,cat_name=None, writer_name=None, tag_name=None):
     today = timezone.now()
     posts = Post.objects.filter(published_date__lte = today,status = 1) 
     if cat_name:
         posts = posts.filter(category__name=cat_name)
     if writer_name:
         posts = posts.filter(author__username=writer_name)
+    if tag_name:
+        posts = posts.filter(tags__name=tag_name)
         
     posts = Paginator(posts, 3)
     page = request.GET.get('page')
