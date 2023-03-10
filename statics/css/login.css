@@ -1,326 +1,358 @@
-/* BASIC */
+/*
+    @hiercelik - hiercelik.net
+    @koalapix - koalapix.com
+*/
+@import url(//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css);
+@import url(http://fonts.googleapis.com/css?family=Titillium+Web&subset=latin,latin-ext);
 
-html {
-  background-color: #56baed;
+@media (min-width: 768px) {
+  .kpx_row-sm-offset-3 div:first-child[class*="col-"] {
+    margin-left: 25%;
+  }
 }
 
 body {
-  font-family: "Poppins", sans-serif;
-  height: 100vh;
+  font-family: 'Titillium Web', sans-serif;
 }
 
 a {
-  color: #92badd;
-  display: inline-block;
+  color: #ff5400;
+}
+
+a:hover {
+  opacity: 0.8;
+  color: #ff5400;
   text-decoration: none;
-  font-weight: 400;
 }
 
-h2 {
+.kpx_login .kpx_authTitle {
   text-align: center;
-  font-size: 16px;
-  font-weight: 600;
-  text-transform: uppercase;
-  display: inline-block;
-  margin: 40px 8px 10px 8px;
-  color: #cccccc;
+  line-height: 300%;
 }
 
-
-
-/* STRUCTURE */
-
-.wrapper {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-  width: 100%;
-  min-height: 100%;
-  padding: 20px;
+.kpx_login .kpx_socialButtons a {
+  color: white; // In yourUse @body-bg 
+  opacity: 0.9;
 }
 
-#formContent {
-  -webkit-border-radius: 10px 10px 10px 10px;
-  border-radius: 10px 10px 10px 10px;
-  background: #fff;
-  padding: 30px;
-  width: 90%;
-  max-width: 450px;
-  position: relative;
-  padding: 0px;
-  -webkit-box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
-  box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
-  text-align: center;
-}
-
-#formFooter {
-  background-color: #f6f6f6;
-  border-top: 1px solid #dce8f1;
-  padding: 25px;
-  text-align: center;
-  -webkit-border-radius: 0 0 10px 10px;
-  border-radius: 0 0 10px 10px;
-}
-
-
-
-/* TABS */
-
-h2.inactive {
-  color: #cccccc;
-}
-
-h2.active {
-  color: #0d0d0d;
-  border-bottom: 2px solid #5fbae9;
-}
-
-
-
-/* FORM TYPOGRAPHY*/
-
-input[type=button],
-input[type=submit],
-input[type=reset] {
-  background-color: #56baed;
-  border: none;
+.kpx_login .kpx_socialButtons a:hover {
   color: white;
-  padding: 15px 80px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  text-transform: uppercase;
-  font-size: 13px;
-  -webkit-box-shadow: 0 10px 30px 0 rgba(95, 186, 233, 0.4);
-  box-shadow: 0 10px 30px 0 rgba(95, 186, 233, 0.4);
-  -webkit-border-radius: 5px 5px 5px 5px;
-  border-radius: 5px 5px 5px 5px;
-  margin: 5px 20px 40px 20px;
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  -ms-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
+  opacity: 1;
 }
 
-input[type=button]:hover,
-input[type=submit]:hover,
-input[type=reset]:hover {
-  background-color: #39ace7;
-}
-
-input[type=button]:active,
-input[type=submit]:active,
-input[type=reset]:active {
-  -moz-transform: scale(0.95);
-  -webkit-transform: scale(0.95);
-  -o-transform: scale(0.95);
-  -ms-transform: scale(0.95);
-  transform: scale(0.95);
-}
-
-input[type=text] {
-  background-color: #f6f6f6;
-  border: none;
-  color: #0d0d0d;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 5px;
-  width: 85%;
-  border: 2px solid #f6f6f6;
+.kpx_login .kpx_socialButtons .kpx_btn-facebook {
+  background: #3b5998;
   -webkit-transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;
-  -ms-transition: all 0.5s ease-in-out;
   -o-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
-  -webkit-border-radius: 5px 5px 5px 5px;
-  border-radius: 5px 5px 5px 5px;
 }
 
-input[type=text]:focus {
-  background-color: #fff;
-  border-bottom: 2px solid #5fbae9;
+.kpx_login .kpx_socialButtons .kpx_btn-facebook:hover {
+  background: #172d5e
 }
 
-input[type=text]:placeholder {
-  color: #cccccc;
+.kpx_login .kpx_socialButtons .kpx_btn-facebook:focus {
+  background: #fff;
+  color: #3b5998;
+  border-color: #3b5998;
 }
 
-/* pass */
-input[type=password] {
-  background-color: #f6f6f6;
-  border: none;
-  color: #0d0d0d;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 5px;
-  width: 85%;
-  border: 2px solid #f6f6f6;
+.kpx_login .kpx_socialButtons .kpx_btn-twitter {
+  background: #00aced;
   -webkit-transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;
-  -ms-transition: all 0.5s ease-in-out;
   -o-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
-  -webkit-border-radius: 5px 5px 5px 5px;
-  border-radius: 5px 5px 5px 5px;
 }
 
-input[type=password]:focus {
-  background-color: #fff;
-  border-bottom: 2px solid #5fbae9;
+.kpx_login .kpx_socialButtons .kpx_btn-twitter:hover {
+  background: #043d52
 }
 
-input[type=password]:placeholder {
-  color: #cccccc;
+.kpx_login .kpx_socialButtons .kpx_btn-twitter:focus {
+  background: #fff;
+  color: #00aced;
+  border-color: #00aced;
 }
 
-/* ANIMATIONS */
-
-/* Simple CSS3 Fade-in-down Animation */
-.fadeInDown {
-  -webkit-animation-name: fadeInDown;
-  animation-name: fadeInDown;
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
+.kpx_login .kpx_socialButtons .kpx_btn-google-plus {
+  background: #c32f10;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
-@-webkit-keyframes fadeInDown {
-  0% {
-    opacity: 0;
-    -webkit-transform: translate3d(0, -100%, 0);
-    transform: translate3d(0, -100%, 0);
-  }
-
-  100% {
-    opacity: 1;
-    -webkit-transform: none;
-    transform: none;
-  }
+.kpx_login .kpx_socialButtons .kpx_btn-google-plus:hover {
+  background: #6b1301
 }
 
-@keyframes fadeInDown {
-  0% {
-    opacity: 0;
-    -webkit-transform: translate3d(0, -100%, 0);
-    transform: translate3d(0, -100%, 0);
-  }
-
-  100% {
-    opacity: 1;
-    -webkit-transform: none;
-    transform: none;
-  }
+.kpx_login .kpx_socialButtons .kpx_btn-google-plus:focus {
+  background: #fff;
+  color: #c32f10;
+  border-color: #c32f10
 }
 
-/* Simple CSS3 Fade-in Animation */
-@-webkit-keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
+.kpx_login .kpx_socialButtons .kpx_btn-soundcloud {
+  background: #ff8800;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
-@-moz-keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
+.kpx_login .kpx_socialButtons .kpx_btn-soundcloud:hover {
+  background: #c73e04
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
+.kpx_login .kpx_socialButtons .kpx_btn-soundcloud:focus {
+  background: #fff;
+  color: #ff8800;
+  border-color: #ff8800
 }
 
-.fadeIn {
-  opacity: 0;
-  -webkit-animation: fadeIn ease-in 1;
-  -moz-animation: fadeIn ease-in 1;
-  animation: fadeIn ease-in 1;
-
-  -webkit-animation-fill-mode: forwards;
-  -moz-animation-fill-mode: forwards;
-  animation-fill-mode: forwards;
-
-  -webkit-animation-duration: 1s;
-  -moz-animation-duration: 1s;
-  animation-duration: 1s;
+.kpx_login .kpx_socialButtons .kpx_btn-github {
+  background: #666666;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  margin: auto;
+  max-width: 50%;
 }
 
-.fadeIn.first {
-  -webkit-animation-delay: 0.4s;
-  -moz-animation-delay: 0.4s;
-  animation-delay: 0.4s;
+.kpx_login .kpx_socialButtons .kpx_btn-github:hover {
+  background: #333333
 }
 
-.fadeIn.second {
-  -webkit-animation-delay: 0.6s;
-  -moz-animation-delay: 0.6s;
-  animation-delay: 0.6s;
+.kpx_login .kpx_socialButtons .kpx_btn-github:focus {
+  background: #fff;
+  color: #666666;
+  border-color: #666666
 }
 
-.fadeIn.third {
-  -webkit-animation-delay: 0.8s;
-  -moz-animation-delay: 0.8s;
-  animation-delay: 0.8s;
+.kpx_login .kpx_socialButtons .kpx_btn-steam {
+  background: #878787;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
-.fadeIn.fourth {
-  -webkit-animation-delay: 1s;
-  -moz-animation-delay: 1s;
-  animation-delay: 1s;
+.kpx_login .kpx_socialButtons .kpx_btn-steam:hover {
+  background: #292929
 }
 
-/* Simple CSS3 Fade-in Animation */
-.underlineHover:after {
+.kpx_login .kpx_socialButtons .kpx_btn-steam:focus {
+  background: #fff;
+  color: #878787;
+  border-color: #878787
+}
+
+.kpx_login .kpx_socialButtons .kpx_btn-pinterest {
+  background: #cc2127;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.kpx_login .kpx_socialButtons .kpx_btn-pinterest:hover {
+  background: #780004
+}
+
+.kpx_login .kpx_socialButtons .kpx_btn-pinterest:focus {
+  background: #fff;
+  color: #cc2127;
+  border-color: #cc2127
+}
+
+.kpx_login .kpx_socialButtons .kpx_btn-vimeo {
+  background: #1ab7ea;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.kpx_login .kpx_socialButtons .kpx_btn-vimeo:hover {
+  background: #162221
+}
+
+.kpx_login .kpx_socialButtons .kpx_btn-vimeo:focus {
+  background: #fff;
+  color: #1ab7ea;
+  border-color: #1ab7ea
+}
+
+.kpx_login .kpx_socialButtons .kpx_btn-lastfm {
+  background: #c3000d;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.kpx_login .kpx_socialButtons .kpx_btn-lastfm:hover {
+  background: #5e0208
+}
+
+.kpx_login .kpx_socialButtons .kpx_btn-lastfm:focus {
+  background: #fff;
+  color: #c3000d;
+  border-color: #c3000d
+}
+
+.kpx_login .kpx_socialButtons .kpx_btn-yahoo {
+  background: #400191;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.kpx_login .kpx_socialButtons .kpx_btn-yahoo:hover {
+  background: #230052
+}
+
+.kpx_login .kpx_socialButtons .kpx_btn-yahoo:focus {
+  background: #fff;
+  color: #400191;
+  border-color: #400191
+}
+
+.kpx_login .kpx_socialButtons .kpx_btn-vk {
+  background: #45668e;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.kpx_login .kpx_socialButtons .kpx_btn-vk:hover {
+  background: #1a3352
+}
+
+.kpx_login .kpx_socialButtons .kpx_btn-vk:focus {
+  background: #fff;
+  color: #45668e;
+  border-color: #45668e
+}
+
+.kpx_login .kpx_socialButtons .kpx_btn-spotify {
+  background: #7ab800;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.kpx_login .kpx_socialButtons .kpx_btn-spotify:hover {
+  background: #3a5700
+}
+
+.kpx_login .kpx_socialButtons .kpx_btn-spotify:focus {
+  background: #fff;
+  color: #7ab800;
+  border-color: #7ab800
+}
+
+.kpx_login .kpx_socialButtons .kpx_btn-linkedin {
+  background: #0976b4;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.kpx_login .kpx_socialButtons .kpx_btn-linkedin:hover {
+  background: #004269
+}
+
+.kpx_login .kpx_socialButtons .kpx_btn-linkedin:focus {
+  background: #fff;
+  color: #0976b4;
+  border-color: #0976b4
+}
+
+.kpx_login .kpx_socialButtons .kpx_btn-stumbleupon {
+  background: #eb4924;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.kpx_login .kpx_socialButtons .kpx_btn-stumbleupon:hover {
+  background: #943019
+}
+
+.kpx_login .kpx_socialButtons .kpx_btn-stumbleupon:focus {
+  background: #fff;
+  color: #eb4924;
+  border-color: #eb4924
+}
+
+.kpx_login .kpx_socialButtons .kpx_btn-tumblr {
+  background: #35465c;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.kpx_login .kpx_socialButtons .kpx_btn-tumblr:hover {
+  background: #142030
+}
+
+.kpx_login .kpx_socialButtons .kpx_btn-tumblr:focus {
+  background: #fff;
+  color: #35465c;
+  border-color: #35465c
+}
+
+
+.kpx_login .kpx_loginOr {
+  position: relative;
+  font-size: 1.5em;
+  color: #aaa;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
+
+.kpx_login .kpx_loginOr .kpx_hrOr {
+  background-color: #cdcdcd;
+  height: 1px;
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+}
+
+.kpx_login .kpx_loginOr .kpx_spanOr {
   display: block;
-  left: 0;
-  bottom: -10px;
-  width: 0;
-  height: 2px;
-  background-color: #56baed;
-  content: "";
-  transition: width 0.2s;
+  position: absolute;
+  left: 50%;
+  top: -0.6em;
+  margin-left: -1.5em;
+  background-color: white;
+  width: 3em;
+  text-align: center;
 }
 
-.underlineHover:hover {
-  color: #0d0d0d;
+.kpx_login .kpx_loginForm .input-group.i {
+  width: 2em;
 }
 
-.underlineHover:hover:after {
-  width: 100%;
+.kpx_login .kpx_loginForm .help-block {
+  color: red;
 }
 
 
-
-/* OTHERS */
-
-*:focus {
-  outline: none;
-}
-
-#icon {
-  width: 60%;
-  max-width: 100px;
-  margin: 20px;
+@media (min-width: 768px) {
+  .kpx_login .kpx_forgotPwd {
+    text-align: right;
+    margin-top: 10px;
+  }
 }
