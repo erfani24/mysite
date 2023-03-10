@@ -42,8 +42,12 @@
 				<div class="row align-items-center">
 					<div class="col-lg-6 col-sm-6 col-6 header-top-left">
 						<ul>
-							<li><a href="#">Visit Us</a></li>
-							<li><a href="#">Buy Tickets</a></li>
+							{% if not request.user.is_authenticated %}
+							<li><a href="{% url 'account_login' %}">Login</a></li>
+							{% else %}
+							<li><a href="#">Loged in as {{request.user.username}} </a></li>
+							<li><a href="{% url 'account_logout' %}">Logout</a></li>
+							{% endif %}
 						</ul>
 					</div>
 					<div class="col-lg-6 col-sm-6 col-6 header-top-right">
