@@ -51,10 +51,10 @@ INSTALLED_APPS = [
     'multi_captcha_admin',
     'django.contrib.admin',
     'django.contrib.auth',
-    'allauth', # new
-    'allauth.account', # new
-    'allauth.socialaccount', # new
-    'allauth.socialaccount.providers.github', # new
+    'allauth', 
+    'allauth.account', 
+    'allauth.socialaccount', 
+    'allauth.socialaccount.providers.github', 
     'allauth.socialaccount.providers.google',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -187,9 +187,14 @@ INTERNAL_IPS = [
 AUTHENTICATION_BACKENDS = (
     "django.contrib.auth.backends.ModelBackend",
     "allauth.account.auth_backends.AuthenticationBackend",
+    'accounts.backends.EmailBackend'
 )
 
 
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 
 LOGIN_REDIRECT_URL = '/'
+
+# Email Backend
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

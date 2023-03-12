@@ -82,6 +82,8 @@ a:hover {
   -moz-transition: all 0.5s ease-in-out;
   -o-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
+  margin: auto;
+  max-width: 50%;
 }
 
 .kpx_login .kpx_socialButtons .kpx_btn-google-plus:hover {
