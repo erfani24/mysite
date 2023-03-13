@@ -7,9 +7,9 @@ from mysite.settings import *
 SECRET_KEY = 'django-insecure-#*!l5b07#-7t-i*u1d0%lag0l%z1mf26yigi=n84#&lq7yf9$&'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['mofamo.tk','www.mofamo.tk']
 
 SITE_ID = 2
 
