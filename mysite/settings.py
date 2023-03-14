@@ -174,3 +174,5 @@ LOGIN_REDIRECT_URL = '/'
 # Email Backend
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+MAINTENANCE_MODE = False

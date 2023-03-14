@@ -39,3 +39,10 @@ urlpatterns = [
     path('summernote/', include('django_summernote.urls')),
     path('captcha/', include('captcha.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+# maintenance urlpattern
+from django.urls import re_path
+from django.conf import settings
+from django.views.generic.base import TemplateView
+
+if settings.MAINTENANCE_MODE:
+   urlpatterns.insert(0, re_path(r'^', TemplateView.as_view(template_name='maintenance.html'), name='maintenance'))
