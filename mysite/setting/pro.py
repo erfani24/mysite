@@ -9,7 +9,7 @@ SECRET_KEY = 'django-insecure-#*!l5b07#-7t-i*u1d0%lag0l%z1mf26yigi=n84#&lq7yf9$&
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['mofamo.tk','www.mofamo.tk']
+ALLOWED_HOSTS = []
 
 SITE_ID = 2
 
